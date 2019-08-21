@@ -1,0 +1,11 @@
+.rating {
+    font-size: 12px;
+    background-color: burlywood;
+    padding: 10px;
+    border-radius: 5px;
+    /* align-content: center; */
+    /* align-self: center; */
+    text-align: center;
+    color: grey;
+    font-weight: 600;
+}

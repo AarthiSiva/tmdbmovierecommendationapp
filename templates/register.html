@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script language="JavaScript"src="Validation.js"></script>
+<style>
+body {
+	background-color: #808080;
+	font-size: 14px;
+	color: #fff;
+}
+
+.simple-login-container {
+	width: 300px;
+	max-width: 100%;
+	margin: 50px auto;
+}
+
+.simple-login-container h2 {
+	text-align: center;
+	font-size: 20px;
+}
+
+.simple-login-container .btn-login {
+	background-color: #FF5964;
+	color: #fff;
+}
+
+a {
+	color: #fff;
+}
+</style>
+</head>
+<body>
+	<form name="myForm" action="/register" method="post" onsubmit="checkPassword()">
+		<div class="simple-login-container">
+			<h2>Registration Form</h2>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<input type="text" name="uname" class="form-control" required
+						placeholder="Username" onblur="validateName()">
+					<p id="name"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<input type="email" name="mail" placeholder="Enter your email id"
+						required class="form-control" onblur="validateEmail()">
+					<p id="email"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<input type="password" name="pwd" id="pwd1"
+						placeholder="Enter your Password" required class="form-control"
+					onblur="validatePassword()" onkeyup="check()">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<input type="password"  id="pwd2"
+						placeholder="Confirm your Password" required class="form-control"
+						onkeyup="check()">
+						<p id="confirmpass"></p>
+				</div>
+				</div>
+			<p id ="pass"></p>
+			<div class="row">
+				<div class="col-md-12 form-group">
+					<input type="submit" class="btn btn-block btn-login">
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

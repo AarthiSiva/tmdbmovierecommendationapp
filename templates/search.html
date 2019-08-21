@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+function changeHtml(id) {
+	if(id.innerHTML == "Recommend")
+		id.innerHTML = "Not Recommend";
+	else
+		id.innerHTML = "Recommend";
+}
+
+</script>
+<script src="cardscroll.js"></script>
+<title></title>
+<link href="cardstyle.css" rel="stylesheet" type="text/css">
+<link href="rate.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+	<h2 align="center"> Search Results </h2>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+   <div class="carousel-inner row w-100 mx-auto">
+	
+  {% for r in response: %}
+   <div class="carousel-item col-md-3 active" style="padding: 10px">
+	<div class="card" style="width: 18rem;">
+  <a href={{r["Url"]}}><img class="card-img-top img-fluid" src={{r["Poster"]}} alt="Card image cap" style="border-radius: 5px"></a>
+  <div class="card-body">
+    <h5 class="card-title" style="text-align:center">{{r["Title"]}}</h5>
+    <div class="row">
+    <h6 class="card-text col-md-3 rating" style="background-color:">{{r["Rating"]}}</h6>
+    <button style="margin: auto;display: block;" type="submit" name="submit" value="submit" class="col-md-9 btn btn-primary" id="showdata" onclick="changeHtml(this)">Recommend</button>
+    </div></div>
+  
+  </div>   
+</div>
+{%
+endfor
+%}
+</div>
+<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
